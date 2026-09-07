@@ -9,7 +9,7 @@ public class ValidationExampleApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(ValidationExampleApplication.class, args);
-        System.out.println("Test is good");
+        System.out.println("Test is good....");
     }
 
 }
