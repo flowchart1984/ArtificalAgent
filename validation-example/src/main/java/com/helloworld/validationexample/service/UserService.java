@@ -29,6 +29,7 @@ public class UserService {
 
     public User getUser(int id){
       // return userRepository.findByUserId(id);
+        System.out.println("hello world"+id);
        return null;
     }
 }
