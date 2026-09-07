@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import com.helloworld.validationexample.service.KafkaProducer;
 import com.helloworld.validationexample.service.UserService;
 
 import java.util.List;
@@ -18,11 +17,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    private final KafkaProducer producer;
 
-    public UserController(KafkaProducer producer){
-        this.producer = producer;
-    }
 
    /* @PostMapping("/publish")
     public String publish(@RequestParam String message){
@@ -43,8 +38,6 @@ public class UserController {
     @GetMapping("/{id}")
     public ResponseEntity<User> getUser(@PathVariable int id) throws UserNotFoundException {
         Optional.ofNullable(userService.getUser(id)).orElseThrow(()-> new UserNotFoundException("USER_NOT_FOUND"));
-
-
         return ResponseEntity.ok(userService.getUser(id));
     }
 
